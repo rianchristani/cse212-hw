@@ -13,7 +13,18 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        //1. Create an new array of doubles with the size of 'length'.
+        var numbers = new double[length];
+
+        //2. Create a for loop that will go trough the array
+        for (int i = 0; i < length; i++)
+        {
+            //3 and 4. In each iteration, calculate the multiple of 'number' by multiplying it with (i + 1) and assign it to the current index of the array.
+            numbers[i] = number * (i + 1);
+        }
+
+        //5. Return the array.
+        return numbers; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +40,17 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        //1. Determine the index where the rotation will start.
+        int index = data.Count - amount;
+
+        //2. Copy the elements that will be rotated to a temporary list.
+        var finalPart = data.GetRange(index, amount);
+
+        //3. Recomve the elements that will be rotated from the original list.
+        data.RemoveRange(index, amount);
+
+        //4. Insert the temporary list at the beginning of the original list.
+        data.InsertRange(0, finalPart);
     }
 }
